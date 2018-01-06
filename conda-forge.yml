@@ -4,3 +4,5 @@ travis:
 appveyor:
   secure:
     BINSTAR_TOKEN: ipv/06DzgA7pzz2CIAtbPxZSsphDtF+JFyoWRnXkn3O8j7oRe3rzqj3LOoq2DZp4
+docker:
+  image: condaforge/linux-anvil@sha256:06450ec212b43cc103462419f271f29cff0cf67e802e63185b40a3ded02393c9
