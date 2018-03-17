@@ -1,6 +1,6 @@
 {% set name = "gawk" %}
-{% set version = "4.2.0" %}
-{% set sha256 = "c88046c6e8396ee548bcb941e16def809b7b55b60a1044b5dd254094f347c7d9" %}
+{% set version = "4.2.1" %}
+{% set sha256 = "2b23d51503b2df9a41aa6fddc6002ad7ebf2a386ac19dc1b6be0dd48b0acf6db" %}
 
 package:
   name: {{ name|lower }}
@@ -12,17 +12,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script:
     - ./configure --prefix="{{ PREFIX }}"
     - make -j${NUM_CPUS}
-    - make check -j${NUM_CPUS}
+    - make check -j
     - make install
 
 requirements:
   build:
     - toolchain
+    - gettext
+  run:
+    - gettext
 
 test:
   commands:
