@@ -22,7 +22,8 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - gettext
   run:
     - gettext
