@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - make  # [unix]
   host:
     - gettext
   run:
