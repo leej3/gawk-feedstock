@@ -7,26 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    sha256: {{ sha256 }}
+  - url: http://git.savannah.gnu.org/cgit/gawk.git/plain/bootstrap.sh
 
 build:
   number: 1000
   skip: true  # [win]
-  script:
-    - ./configure --prefix="{{ PREFIX }}"
-    - make -j${NUM_CPUS}
-    - make check -j
-    - make install
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - make  # [unix]
   host:
-    - gettext
-  run:
-    - gettext
+    - gettext   # [osx]
+    - readline  # [osx]
 
 test:
   commands:
