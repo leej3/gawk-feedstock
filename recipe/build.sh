@@ -13,9 +13,9 @@ make -j${NUM_CPUS} ${VERBOSE_AT}
 
 # These tests fail under emulation, still run them but ignore their result
 if [[ ${target_platform} == linux-aarch64 ]]; then
-    make check -j${NUM_CPUS} || { exit 0; }
+    make check -j${NUM_CPUS} || true
 elif [[ ${target_platform} == linux-ppc64le ]]; then
-    make check -j${NUM_CPUS} || { exit 0; }
+    make check -j${NUM_CPUS} || true
 else
     make check -j${NUM_CPUS}
 fi
