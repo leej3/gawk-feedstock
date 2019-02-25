@@ -12,7 +12,7 @@ source:
   - url: http://git.savannah.gnu.org/cgit/gawk.git/plain/bootstrap.sh
 
 build:
-  number: 1000
+  number: 1001
   skip: true  # [win]
 
 requirements:
