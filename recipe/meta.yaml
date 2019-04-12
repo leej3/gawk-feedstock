@@ -1,6 +1,6 @@
 {% set name = "gawk" %}
 {% set version = "5.0.0" %}
-{% set sha256 = "34fef05a25afdbe00edeffd1defa6d0578257651454fa2295d03db15b88358b3" %}
+{% set sha256 = "2d686c9a5b7ba292bc3fa56bc84a1959d721a9d57970a76413156d4b8f1fc67d" %}
 
 package:
   name: {{ name|lower }}
