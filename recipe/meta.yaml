@@ -1,6 +1,6 @@
 {% set name = "gawk" %}
-{% set version = "4.2.1" %}
-{% set sha256 = "2b23d51503b2df9a41aa6fddc6002ad7ebf2a386ac19dc1b6be0dd48b0acf6db" %}
+{% set version = "5.0.0" %}
+{% set sha256 = "34fef05a25afdbe00edeffd1defa6d0578257651454fa2295d03db15b88358b3" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   - url: http://git.savannah.gnu.org/cgit/gawk.git/plain/bootstrap.sh
 
 build:
-  number: 1001
+  number: 0
   skip: true  # [win]
 
 requirements:
