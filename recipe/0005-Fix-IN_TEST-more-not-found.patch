@@ -1,0 +1,11 @@
+--- test/Makefile.in	2019-04-12 22:40:06.089475120 -0400
++++ test/Makefile.in	2019-04-12 22:40:38.183668063 -0400
+@@ -4957,7 +4957,7 @@
+ 		diff -c "$(srcdir)"/$${base}.ok  $$i ; \
+ 		fi ; \
+ 		fi ; \
+-	done | more
++	done
+
+ # convenient way to scan valgrind results for errors
+ valgrind-scan:
