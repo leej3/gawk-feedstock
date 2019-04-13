@@ -15,11 +15,11 @@ make -j${CPU_COUNT} V=1
 
 # These tests fail under emulation, still run them but ignore their result
 if [[ ${target_platform} == linux-aarch64 ]]; then
-    make check -j${CPU_COUNT} || true
+    make check || true
 elif [[ ${target_platform} == linux-ppc64le ]]; then
-    make check -j${CPU_COUNT} || true
+    make check || true
 else
-    make check -j${CPU_COUNT}
+    make check
 fi
 
 make install
