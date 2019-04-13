@@ -1,49 +1,11 @@
-diff --git a/test/Makefile.am b/test/Makefile.am
-index 57d0444c..fb46f23c 100644
---- a/test/Makefile.am
-+++ b/test/Makefile.am
-@@ -1354,7 +1354,7 @@ GAWK_EXT_TESTS = \
- 
- ARRAYDEBUG_TESTS = arrdbg
- 
--EXTRA_TESTS = inftest regtest ignrcas3 
-+EXTRA_TESTS = inftest regtest ignrcas3
- 
- INET_TESTS = inetdayu inetdayt inetechu inetecht
- 
-@@ -1485,7 +1485,7 @@ SORT = sort
- 
- # Default for VALGRIND is empty unless overridden by a command-line argument.
- # This protects against cruft in the environment.
--VALGRIND = 
-+VALGRIND =
- 
- # This business forces the locale to be C for running the tests,
- # unless we override it to something else for testing.
-@@ -1752,7 +1752,7 @@ nors::
- 
- # fmtspcl.ok: fmtspcl.tok Makefile fix-fmtspcl.awk
- # 	@$(AWK) -v "sd=$(srcdir)" -f "$(srcdir)/fix-fmtspcl.awk" < "$(srcdir)"/fmtspcl.tok > $@ 2>/dev/null
--# 
-+#
- # fmtspcl: fmtspcl.ok
- # 	@echo $@
- # 	@$(AWK) $(AWKFLAGS) -f "$(srcdir)"/fmtspcl.awk  --lint >_$@ 2>&1 || echo EXIT CODE: $$? >>_$@
-@@ -1765,7 +1765,7 @@ rebuf::
- 	@AWKBUFSIZE=4096 AWKPATH="$(srcdir)" $(AWK) -f $@.awk  < "$(srcdir)"/$@.in >_$@ 2>&1 || echo EXIT CODE: $$? >>_$@
- 	@-$(CMP) "$(srcdir)"/$@.ok _$@ && rm -f _$@
- 
--rsglstdin:: 
-+rsglstdin::
- 	@echo $@
- 	@cat  "$(srcdir)"/rsgetline.in | AWKPATH="$(srcdir)" $(AWK) -f rsgetline.awk >_$@ 2>&1 || echo EXIT CODE: $$? >>_$@
- 	@-$(CMP) "$(srcdir)"/$@.ok _$@ && rm -f _$@
-@@ -2326,7 +2326,7 @@ diffout:
+--- test/Makefile.am	2019-04-12 22:24:42.402987467 -0400
++++ test/Makefile.am	2019-04-12 22:26:03.725453876 -0400
+@@ -2326,7 +2326,7 @@
  		diff -c "$(srcdir)"/$${base}.ok  $$i ; \
  		fi ; \
  		fi ; \
 -	done | more
 +	done
- 
+
  # convenient way to scan valgrind results for errors
  valgrind-scan:
