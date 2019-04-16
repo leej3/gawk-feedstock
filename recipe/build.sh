@@ -11,7 +11,7 @@ chmod +x ./bootstrap.sh
 ./configure --prefix="${PREFIX}" \
             --with-readline="${PREFIX}"
 
-make -j${CPU_COUNT} V=1
+make -j${CPU_COUNT} AM_V=99
 
 # These tests fail under emulation, still run them but ignore their result
 if [[ ${target_platform} == linux-aarch64 ]]; then
