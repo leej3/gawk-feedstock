@@ -1,0 +1,20 @@
+--- test/Makefile.in	2019-04-16 18:30:54.938465236 -0400
++++ test/Makefile.in	2019-04-16 18:32:31.814084154 -0400
+@@ -866,8 +866,6 @@
+ 	litoct.awk \
+ 	litoct.in \
+ 	litoct.ok \
+-	localenl.ok \
+-	localenl.sh \
+ 	longsub.awk \
+ 	longsub.in \
+ 	longsub.ok \
+@@ -4957,7 +4955,7 @@
+ 		diff -c "$(srcdir)"/$${base}.ok  $$i ; \
+ 		fi ; \
+ 		fi ; \
+-	done | more
++	done
+
+ # convenient way to scan valgrind results for errors
+ valgrind-scan:

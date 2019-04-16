@@ -1,5 +1,5 @@
 --- test/Makefile.am	2019-04-16 18:08:51.407956309 -0400
-+++ test/Makefile.am.new	2019-04-16 18:13:42.327053941 -0400
++++ test/Makefile.am	2019-04-16 18:13:42.327053941 -0400
 @@ -607,8 +607,6 @@
  	litoct.awk \
  	litoct.in \
@@ -15,6 +15,6 @@
  		fi ; \
 -	done | more
 +	done
- 
+
  # convenient way to scan valgrind results for errors
  valgrind-scan:
