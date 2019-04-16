@@ -9,7 +9,7 @@ source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: 2d686c9a5b7ba292bc3fa56bc84a1959d721a9d57970a76413156d4b8f1fc67d
     patches:
-      - 0004-Fix-AM_TEST-no-more-or-localenl.patch  #  [linux-64]
+      - 0004-Fix-AM_TEST-no-more-or-localenl.patch  # [linux-64]
   - url: http://git.savannah.gnu.org/cgit/{{ name }}.git/plain/bootstrap.sh?h={{ name }}-{{ version }}
     sha256: 34fef05a25afdbe00edeffd1defa6d0578257651454fa2295d03db15b88358b3
 
