@@ -1,6 +1,5 @@
 {% set name = "gawk" %}
-{% set version = "4.2.1" %}
-{% set sha256 = "2b23d51503b2df9a41aa6fddc6002ad7ebf2a386ac19dc1b6be0dd48b0acf6db" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +7,16 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
-  - url: http://git.savannah.gnu.org/cgit/gawk.git/plain/bootstrap.sh
+    sha256: 2d686c9a5b7ba292bc3fa56bc84a1959d721a9d57970a76413156d4b8f1fc67d
+    patches:
+      - 0004-Fix-AM_TEST-no-more-or-localenl.patch
+      - 0005-Fix-IN_TEST-no-more-or-localenl.patch
+  - url: http://git.savannah.gnu.org/cgit/{{ name }}.git/plain/bootstrap.sh?h={{ name }}-{{ version }}
+    sha256: 34fef05a25afdbe00edeffd1defa6d0578257651454fa2295d03db15b88358b3
+
 
 build:
-  number: 1001
+  number: 0
   skip: true  # [win]
 
 requirements:

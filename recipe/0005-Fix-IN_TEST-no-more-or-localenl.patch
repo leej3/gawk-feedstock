@@ -1,0 +1,59 @@
+--- test/Makefile.in	2019-04-16 18:30:54.938465236 -0400
++++ test/Makefile.in.new	2019-04-16 20:17:32.959055237 -0400
+@@ -866,8 +866,6 @@
+ 	litoct.awk \
+ 	litoct.in \
+ 	litoct.ok \
+-	localenl.ok \
+-	localenl.sh \
+ 	longsub.awk \
+ 	longsub.in \
+ 	longsub.ok \
+@@ -1576,7 +1574,7 @@
+ 	zero2 zeroe0 zeroflag
+ 
+ UNIX_TESTS = \
+-	fflush getlnhd localenl pid pipeio1 pipeio2 poundbang rtlen rtlen01 \
++	fflush getlnhd pid pipeio1 pipeio2 poundbang rtlen rtlen01 \
+ 	space strftlng
+ 
+ GAWK_EXT_TESTS = \
+@@ -1668,7 +1666,7 @@
+ NEED_TRADITIONAL = litoct tradanch rscompat
+ 
+ # Lists of tests that run a shell script
+-RUN_SHELL = exit fflush localenl next randtest rtlen rtlen01
++RUN_SHELL = exit fflush next randtest rtlen rtlen01
+ 
+ # List of the tests which fail with EXIT CODE 1
+ FAIL_CODE1 = \
+@@ -1722,7 +1720,7 @@
+ EXPECTED_FAIL_ZOS = \
+ 	aasort aasorti arraysort asort asorti backbigs1 backsmalls1 \
+ 	backsmalls2 charasbytes concat4 dfamb1 double1 double2 fmttest \
+-	forcenum gsubtst5 ignrcas2 lc_num1 localenl mbfw1 mbprintf1 \
++	forcenum gsubtst5 ignrcas2 lc_num1 mbfw1 mbprintf1 \
+ 	mbprintf2 mbprintf3 mbprintf4 mbprintf5 mbstr1 mbstr2 numrange \
+ 	printhuge profile5 regrange reint2 rri1 sigpipe1 sortfor sortu \
+ 	subamp subi18n symtab1 symtab8 timeout wideidx wideidx2 \
+@@ -3961,11 +3959,6 @@
+ 	@AWKPATH="$(srcdir)" $(AWK) -f $@.awk  >_$@ 2>&1 || echo EXIT CODE: $$? >>_$@
+ 	@-$(CMP) "$(srcdir)"/$@.ok _$@ && rm -f _$@
+ 
+-localenl:
+-	@echo $@
+-	@-$(LOCALES) AWK="$(AWKPROG)" "$(srcdir)"/$@.sh  > _$@ 2>&1 || echo EXIT CODE: $$? >>_$@
+-	@-$(CMP) "$(srcdir)"/$@.ok _$@ && rm -f _$@
+-
+ rtlen:
+ 	@echo $@
+ 	@-$(LOCALES) AWK="$(AWKPROG)" "$(srcdir)"/$@.sh  > _$@ 2>&1 || echo EXIT CODE: $$? >>_$@
+@@ -4957,7 +4950,7 @@
+ 		diff -c "$(srcdir)"/$${base}.ok  $$i ; \
+ 		fi ; \
+ 		fi ; \
+-	done | more
++	done
+ 
+ # convenient way to scan valgrind results for errors
+ valgrind-scan:
