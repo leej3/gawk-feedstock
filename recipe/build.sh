@@ -13,6 +13,8 @@ chmod +x ./bootstrap.sh
 
 make -j${CPU_COUNT} AM_V=99
 
+rm test/localenl.*
+
 # These tests fail under emulation, still run them but ignore their result
 if [[ ${target_platform} == linux-aarch64 ]]; then
     make check || true
